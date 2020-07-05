@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Formulario from './components/Formulario';
-import ListadoImagenes from './components/ListadoImagenes'; //SIGUIENTE VIDEO: 7, CAPÍTULO: 12
+import ListadoImagenes from './components/ListadoImagenes';
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
         }
   
         const imagenesPorPagina = 30;
-        const KEY = '4021571-d7d2ade86a3adfc6518db1300';
+        const KEY = process.env.KEY;
         const URL = `https://pixabay.com/api/?key=${KEY}&q=${busqueda}&per_page=${imagenesPorPagina}&page=${paginaActual}`;
   
         const respuesta = await fetch(URL);
